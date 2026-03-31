@@ -39,6 +39,15 @@ public class Gaulois {
 	public void boirePotion(int forcePotion) {
 		this.effetPotion = forcePotion;
 	}
+	public void sepresenter() {
+		if (this.village==null)
+			{this.parler("je n'appartien a aucun village");}
+		else if (village.getChef()==this)
+			{System.out.print("Le Gaulois  "+this.getNom()+ ": Bonjour, je m'appelle "+this.getNom()+". Je suis le chef du village : "+village.getNom());}
+		else 
+			{System.out.print("Le Gaulois  "+this.getNom()+ ": Bonjour, je m'appelle "+this.getNom()+". Je suis un habitant du village : "+village.getNom());}
+		System.out.print("\n");
+	}
 	
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("astérix", 8);

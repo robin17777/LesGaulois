@@ -15,6 +15,7 @@ public class village {
 		this.nbVillageois=1;
 		this.tab=new Gaulois[nbMax];
 		this.tab[0]=chef;
+		chef.setVillage(this);
 	}
 
 	public String getNom() {
@@ -39,10 +40,16 @@ public class village {
 		gaulois.setVillage(this);
 		this.tab[this.nbVillageois]=gaulois;
 		nbVillageois++;
-		
-		
-		
 	}
+	public void afficherVillageois() {
+		System.out.println("Dans le village "+ this.nom+" du chef "+this.chef+"\r\n"
+				+ "vivent les légendaires gaulois :");
+		for (int i=1 ; i < this.nbVillageois;i++) {
+			System.out.print(this.tab[i].getNom());
+			System.out.print("\n");
+		}
+	}
+
 	
 	public static void main(String[] args) {
 		Gaulois Abraracourcix =new Gaulois("abraracourcix",6);
@@ -54,6 +61,9 @@ public class village {
 		 System.out.println(gaulois);
 		gaulois = village.trouverVillageois(2);
 		 System.out.println(gaulois);
+		 village.afficherVillageois();
+		 Abraracourcix.sepresenter();
+		 Asterix.sepresenter();
 	}
 	
 	
